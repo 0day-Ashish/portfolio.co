@@ -1,0 +1,302 @@
+* {
+    
+    background-color: black;
+}
+
+.header {
+    text-align: center; /* Center the header content */
+    display: flex;
+    flex-direction: row; /* Align items in a row */
+    justify-content: space-between; /* Space between items */
+    padding: 0 50px;
+    align-items: center; /* Align items vertically */
+}
+
+.header h1 {
+    font-size: 40px;    
+    font-weight: bold;
+    background-color: black;    
+    color: rgb(235, 18, 18);
+    margin: 0; /* Remove margin */
+    padding: 10px 0; /* Adjusted padding */
+    display: inline-block; /* Ensure hover effect is applied only to the text */
+    flex-grow: 1; /* Allow the text to grow and take available space */
+    text-align: center; /* Center the text */
+    font-family: 'Courier New', monospace;
+    margin-left: 200px; /* Move header further to the right */
+    
+}
+
+.nav-bar {
+    display: flex; /* Ensure nav bar is displayed on larger screens */
+    justify-content: center; /* Center buttons horizontally */
+    list-style: none;
+    padding: 0;
+    margin: auto; /* Adjusted margin to move it closer to the header */
+    background-color: rgb(6, 6, 6);
+    position: -webkit-sticky; /* Stick to the top when scrolled */
+    position: sticky; /* Stick to the top when scrolled */
+    top: 0; /* Stick to the top */
+    z-index: 1; /* Ensure nav bar is above other elements */
+}
+
+.nav-bar.show {
+    display: flex; /* Ensure nav bar is displayed when the hamburger menu is clicked */
+    position: fixed; /* Position nav bar over the body */
+    top: 50px; /* Align below the header */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    flex-direction: column; /* Stack items vertically */
+    background-color: rgba(6, 6, 6, 0.9); /* Semi-transparent background */
+    z-index: 2; /* Ensure nav bar is above other elements */
+}
+
+.nav-bar li {
+    margin: 15px 15px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-bar a:hover {
+    background-color: white;
+    color: rgb(1, 1, 1);
+}
+
+.container {
+    border: 1px solid white;
+    margin: 50px 50px 50px 50px;
+    color: aliceblue;
+    border-radius: 10px;
+    border-color: rgb(244, 47, 16);
+}
+
+/* Text styling */
+.bio {
+    color: aliceblue;
+    text-align: center;
+    padding: 0 50px;
+    font-family: 'Times New Roman', serif;
+    font-size: 20px;
+    margin: 20px auto;
+    width: 80%; /* Match the width of the content */
+    white-space: normal; /* Allow text to wrap */
+    overflow: hidden;
+    display: flex; /* Use flexbox to center the text */
+    justify-content: center; /* Center the text horizontally */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    border: none; /* Remove any border */
+    position: relative; /* Position relative for cursor positioning */
+}
+
+#typed-text {
+    display: inline-block;
+}
+
+/* Remove cursor styles */
+#cursor {
+    display: none;
+}
+  
+/* Blink animation */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+}
+
+.pfp {
+    display: block;
+    margin-left: 20px;
+    margin-right: 20px; /* Adjusted margin to fill the gap */
+    width: 150px; /* Reduced width to make the profile picture smaller */
+    height: 150px; /* Maintains aspect ratio */
+    border-radius: 50%;
+    margin-top: 10px; /* Decreased top margin */
+    margin-bottom: 10px; /* Decreased bottom margin */
+    object-fit: cover; /* Ensures the image fits inside the circle */
+    overflow: hidden; /* Ensures the image does not overflow the circle */
+    transition: transform 0.3s ease-in-out; /* Added transition for hover effect */
+}
+
+.pfp:hover {
+    transform: scale(1.2); /* Scale up the profile picture on hover */
+}
+
+.hamburger {
+    display: none; /* Hide the toggle button by default */
+    flex-direction: column;
+    cursor: pointer;
+    margin: 10px;
+    position: relative; /* Ensure the click area is limited to the button */
+    z-index: 3; /* Ensure the hamburger is above other elements */
+    margin-left: auto; /* Align to the right */
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: transform 0.4s, opacity 0.4s; /* Added transition for transform and opacity */
+    z-index: 4; /* Ensure the hamburger items are above other elements */
+}
+
+.hamburger.active div:nth-child(1) {
+    transform: translateY(7px) rotate(45deg); /* Rotate the first line */
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg); /* Rotate the last line */
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-box {
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-box:hover img {
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: white;
+    background-color: rgb(6, 6, 6);
+}
+
+hr {
+    border-color: red;
+    margin: 20px auto;
+    width: 80%;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header {
+        padding-right: 0;
+        padding: 20px 0;
+        align-items: center; /* Center align items on smaller screens */
+    }
+
+    .header h1 {
+        font-size: 30px;
+        margin: 0 50px 0 0; /* Adjusted margin for smaller screens */
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        display: none; /* Hide nav bar initially on smaller screens */
+    }
+
+    .nav-bar.show {
+        display: flex; /* Show nav bar when the hamburger menu is clicked */
+        position: fixed; /* Position nav bar over the body */
+        top: 50px; /* Align below the header */
+    }
+
+    .nav-bar li {
+        margin: 10px 0;
+    }
+
+    .container {
+        margin: 20px;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust grid for smaller screens */
+    }
+
+    #bio {
+        padding: 0 20px; /* Adjusted padding for smaller screens */
+        font-size: small; /* Adjusted font size for smaller screens */
+        width: 90%; /* Adjusted width for smaller screens */
+        text-align: center;
+    }
+
+    .pfp {
+        width: 150px;
+        height: 150px;
+        order: 2; /* Move profile picture to the right */
+    }
+
+    .hamburger {
+        display: flex; /* Show the toggle button on smaller screens */
+        order: 1; /* Move toggle button to the left */
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 25px;
+        margin: 0 40px 0 0; /* Adjusted margin for even smaller screens */
+    }
+
+    .nav-bar a {
+        padding: 8px 10px;
+    }
+
+    .container {
+        margin: 10px;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Adjust grid for even smaller screens */
+    }
+
+    #bio {
+        padding: 0 10px; /* Adjusted padding for even smaller screens */
+        font-size: x-small; /* Adjusted font size for even smaller screens */
+        width: 95%; /* Adjusted width for even smaller screens */
+        text-align: center;
+        margin: 20px auto; /* Adjusted margin to match the horizontal line */
+        width: 80%; /* Match the width of the horizontal line */  
+    }
+
+    .pfp {
+        width: 100px;
+        height: 100px;
+        order: 2; /* Move profile picture to the right */
+    }
+
+    .hamburger {
+        display: flex; /* Show the toggle button on smaller screens */
+        order: 1; /* Move toggle button to the left */
+    }
+}
+
+
