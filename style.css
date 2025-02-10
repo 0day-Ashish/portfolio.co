@@ -1,6 +1,7 @@
 * {
     
     background-color: black;
+    
 }
 
 .header {
@@ -61,6 +62,7 @@
     color: white;
     border-radius: 5px;
     transition: background-color 0.3s;
+    font-family: "Trebuchet MS", Helvetica, sans-serif; 
 }
 
 .nav-bar a:hover {
@@ -76,12 +78,11 @@
     border-color: rgb(244, 47, 16);
 }
 
-/* Text styling */
 .bio {
     color: aliceblue;
     text-align: center;
     padding: 0 50px;
-    font-family: 'Times New Roman', serif;
+    font-family: "Courier New", Courier, monospace;
     font-size: 20px;
     margin: 20px auto;
     width: 80%; /* Match the width of the content */
